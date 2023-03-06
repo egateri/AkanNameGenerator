@@ -1,6 +1,16 @@
-const main = () => {
+function main()  {
 
-  /*
+
+  /*variable declarations */
+  var birthYear = null;
+  var birthMonth = null;
+  var birthDay = null;
+  var gender = null;
+  var birthCentury = null;
+  var birthCenturyDigits = null;
+ var birthYearDigits = null;
+
+ /* Male List  - Part of Project documentation
 Male Names
 Sunday: Kwasi
 Monday: Kwadwo
@@ -10,7 +20,7 @@ Thursday:  Yaw
 Friday: Kofi
 Saturday: Kwame
 */
-  const maleNameList = [
+const maleNameList = [
     "Kwasi",
     "Kwadwo",
     "Kwabena",
@@ -19,7 +29,7 @@ Saturday: Kwame
     "Kofi",
     "Kwame",
   ];
-  /*
+  /* 
 Female Names
 Sunday: Akosua
 Monday: Adwoa
@@ -38,31 +48,15 @@ Saturday: Ama
     "Afua",
     "Ama",
   ];
-  /*
-Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
-where;
-CC - is the century digits. For example 1989 has CC = 19
-YY - is the Year digits (1989 has YY = 89)
-MM -  is the Month
-DD - is the Day of the month 
-mod - is the modulus function ( % )
-Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD )%7;
-*/
 
-  /*variable declarations */
-  var birthYear = null; 
-  var birthMonth = null;
-  var birthDay = null;
-  var gender = null;
-  var dayOfTheWeekIndex = null;
 
-  /*Getting inputs from HTML Form*/
-  var birthYear = document.getElementById("form").elements[0].value;
-  var birthMonth= document.getElementById("form").elements[1].value;
-  var birthDay= document.getElementById("form").elements[2].value;
-  var gender= document.getElementById("form").elements[3].value;
+    /*Getting inputs from HTML Form*/
+    birthYear = document.getElementById("form").elements[0].value;
+    birthMonth = document.getElementById("form").elements[1].value;
+    birthDay = document.getElementById("form").elements[2].value;
+    gender = document.getElementById("form").elements[3].value;
 
-  /*Getting the inputs*/
+  /*Getting the inputs*/ 
   // birthYear = prompt("Enter Birth Year:");
   // birthMonth = prompt("Enter Month Birth:");
   // birthDay = prompt("Enter day of Birth:");
@@ -73,37 +67,67 @@ Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD 
   console.log("Birth Day " + birthDay);
   console.log("Your Gender " + gender);
 
-  /*parsing the inputs to help in validation */
-  birthYear = parseInt(birthYear);
-  console.log("Parsed Birth Year " + birthYear);
-  birthMonth = parseInt(birthMonth);
-  console.log("Parsed Birth Month " + birthMonth);
-  birthDay = parseInt(birthDay);
-  console.log("Parsed Birth Day " + birthDay);
-  gender = gender.toLowerCase();
-  console.log("Your Gender " + gender);
 
-  /*Validating the inputs*/
-  if (birthYear >= 0 && birthYear <= 9999) {
-    //Year is OK: Now validate the Month.
-    console.log("Year OK: We can validate the Month");
 
+//Check The year is made up of Numbers only as Input Validation
+if(containNumbersOnly(birthYear)){
+    console.log("OK: Numbers only. Confirming length:" +birthYear);
+
+    //check that the year is 4 digits long => CCYY i.e 1934
+    if(birthYear.length === 4){
+        
+        //observe the year input in string
+        console.log("OK: Length is OK:" +birthYear);
+        //slice the CC and YY values and observe the value
+        birthCenturyDigits = birthYear.slice(0,2);
+        birthYearDigits = birthYear.slice(2,4);
+        console.log("OK birthCenturyDigits  :" +birthCenturyDigits);
+        console.log("OK: birthYearDigits:  " +birthYearDigits);
+
+        //observe the datatye of CC and YY
+        console.log("OK birthCenturyDigits  :" +typeof(birthCenturyDigits));
+        console.log("OK: birthYearDigits:  " +typeof(birthYearDigits));
+        
+        //Parse from String to Numbers
+        birthCenturyDigits = parseInt(birthYear.slice(0,2));
+        birthYearDigits = parseInt(birthYear.slice(2,4));
+       
+        //Observe the Parsing is data Type of the output
+        console.log("OK birthCenturyDigits  :" +birthCenturyDigits);
+        console.log("OK: birthYearDigits:  " +birthYearDigits);
+        console.log("OK birthCenturyDigits  :" +typeof(birthCenturyDigits));
+        console.log("OK: birthYearDigits:  " +typeof(birthYearDigits));
+
+
+      /*parsing the inputs to help in validation - for Day DD, Month, MM, and Gender*/
+       birthMonth = parseInt(birthMonth);
+       console.log("Parsed Birth Month " + birthMonth);
+       birthDay = parseInt(birthDay);
+       console.log("Parsed Birth Day " + birthDay);
+       gender = gender.toLowerCase();
+       console.log("Your Gender " + gender);
+       
+
+    /*Validating the Months & Day inputs*/
     if (birthMonth >= 1 && birthMonth <= 12) {
-      //Month is OK  (m<= 1) or (m > 12) : Now validate the Day.
+      //Month is OK  (m>= 1) or (m <= 12) : Now validate the Day.
       console.log("Month OK: We can validate the Day");
 
       if (birthDay >= 1 && birthDay <= 31) {
-        //Day is OK  (d<=0) or (d>31) : Now validate the gender.
+        //Day is OK  (d > 0) or (d< =31) : Now validate the gender.
         console.log("Day OK: We can validate the Gender");
 
         if (gender === "m" || gender === "f") {
           //Gender is OK: m or f) : Now invoke function to calculate values to calculate index of day.
-          console.log("Gender OK: We can calculate the value");
-          alert("Coding in Progress!!: Working on functions to Calculate Century YY, dayOfweekIndex and choosing Akan Name");
+          console.log("Gender OK: We can calculate the value Name");
+
+      //Call the Akan Name Function to Check the Name 
+        getAkanName(gender);
+            
         } else {
           //Gender is not Ok: Throw Error
-          console.log("Gender Error: Enter between M or F");
-          alert("Gender Error: Gender must either be M or F");
+          console.log("Gendor Error: Enter between M or F");
+          alert("Gendor Error: Gender must either be M or F");
         }
       } else {
         //Day is not Ok: Throw Error
@@ -115,9 +139,108 @@ Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD 
       console.log("Month Error: Enter between 1 and 12");
       alert("Month Error: Enter Month between 1 and 12");
     }
-  } else {
-    //Year is not Ok: Throw Error
-    console.log("Year Error: Enter between 0000 and 9999");
-    alert(" Year Error: Enter Year between 0000 and 9999");
-  }
+
+        
+    }
+        
+   else {
+       //Throw Error: The length of the Year is Less than or More than 4 digits i.e CCYY
+        console.log("Error: Fill the Year in Four Digits:" +birthYear);
+    }
+}
+else
+{
+    //Throw Error: the Entry contain non-numbers i.e #^7* @ e.t.c
+    console.log("Error: Fill Year Date in Numbers:" +birthYear);
+}
+
+
+
+/*REGEX Function to validate the year INPUT only has numbers*/
+function containNumbersOnly(str){
+    return /^\d+$/.test(str); 
+}
+
+
+
+/*Start of getAkanName Function*/
+function getAkanName (gender) {
+    
+var gender = gender; 
+var akanName = null;
+var indexOf = null;
+
+//call the indexOfDay function to calculate index to access the 2 array lists.
+indexOf = getDayOfTheWeekIndex(birthCenturyDigits, birthYearDigits, birthMonth, birthDay);
+
+//Observe the response from the Function
+console.log("Test the response of the function call "+ indexOf);
+
+//Strict check of gender! NULL Index means the Name does not exist.
+    if (gender ==="f" && indexOf !== null )
+{
+    akanName = femaleNameList[indexOf];
+    console.log("Your Akan Name -> Woman :" +akanName);
+}
+else if (gender ==="m" && indexOf !== null) {
+    
+    akanName = maleNameList[indexOf];
+   console.log("Your Akan Name -> Man  : " +akanName);
+} 
+else{
+    //Throw Error: Akan Name does not exixt
+    console.log("Your Akan Name does not exist");
+}
+    
+}
+    
+
+/*Function to Get Day of the Week Starts here start here*/
+function getDayOfTheWeekIndex (birthCenturyDigits, birthYearDigits, birthMonth, birthDay) {
+
+/* -- Part of Project Documenation on HOW to calculate Day of the Week
+Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
+
+ where;
+ CC - is the century digits. For example 1989 has CC = 19
+ YY - is the Year digits (1989 has YY = 89)
+ MM -  is the Month
+ DD - is the Day of the month 
+ mod - is the modulus function ( % )
+*/
+
+ //Local variable declarations: Project documentation convention used for ease of reading. 
+let d = null;
+let CC = birthCenturyDigits;
+let YY = birthYearDigits;
+let MM = birthMonth;
+let DD = birthDay;  
+let dayOfTheWeekIndex =null;
+    
+    //To observe the values called in the function
+  console.log("Birth Centuary " + CC);
+  console.log("Birth Year " + YY);
+  console.log("Birth Month " + MM);
+  console.log("Birth Day " + DD);
+
+    //Calculating the day of the Week as per project documentation 
+d =  ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD )%7;
+
+ console.log("The index of day is: " +d);
+
+  if(d >= 0){
+      //Round of to the floor and return the Index.
+   dayOfTheWeekIndex = Math.floor(d);
+   return dayOfTheWeekIndex;
+  
+   }
+   else{
+    //The index should always be +ve and  => Akan Name does not exist in the 2 lists.
+    console.log("Your Akan Name does not Exist");
+     // Return NULL or Error message to HTML:
+       return null;
+   }
+
+}
+
 }
