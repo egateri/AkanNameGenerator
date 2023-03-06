@@ -1,4 +1,5 @@
-function main()  {
+/* main function */
+const main =() => {
 
 
   /*variable declarations */
@@ -10,7 +11,7 @@ function main()  {
   var birthCenturyDigits = null;
  var birthYearDigits = null;
 
- /* Male List  - Part of Project documentation
+ /* Male List  
 Male Names
 Sunday: Kwasi
 Monday: Kwadwo
@@ -29,7 +30,7 @@ const maleNameList = [
     "Kofi",
     "Kwame",
   ];
-  /* 
+  /*  Female List
 Female Names
 Sunday: Akosua
 Monday: Adwoa
@@ -56,7 +57,7 @@ Saturday: Ama
     birthDay = document.getElementById("form").elements[2].value;
     gender = document.getElementById("form").elements[3].value;
 
-  /*Getting the inputs*/ 
+  /*Getting the inputs via prompt*/ 
   // birthYear = prompt("Enter Birth Year:");
   // birthMonth = prompt("Enter Month Birth:");
   // birthDay = prompt("Enter day of Birth:");
@@ -69,9 +70,9 @@ Saturday: Ama
 
 
 
-//Check The year is made up of Numbers only as Input Validation
-if(containNumbersOnly(birthYear)){
-    console.log("OK: Numbers only. Confirming length:" +birthYear);
+//Validate birthYear is made up of number characters only
+if(containNumbersOnly(birthYear) === true){
+    console.log("OK: Year Numbers only:" +birthYear);
 
     //check that the year is 4 digits long => CCYY i.e 1934
     if(birthYear.length === 4){
@@ -111,33 +112,34 @@ if(containNumbersOnly(birthYear)){
     /*Validating the Months & Day inputs*/
     if (birthMonth >= 1 && birthMonth <= 12) {
       //Month is OK  (m>= 1) or (m <= 12) : Now validate the Day.
-      console.log("Month OK: We can validate the Day");
+      console.log("OK: Month is OK -> Validate the Day");
 
       if (birthDay >= 1 && birthDay <= 31) {
         //Day is OK  (d > 0) or (d< =31) : Now validate the gender.
-        console.log("Day OK: We can validate the Gender");
+        console.log("OK: Day is OK -> validate the Gender");
 
-        if (gender === "m" || gender === "f") {
+        //Strict validatation of gender
+        if ((gender === "m" || gender === "f") || (gender === "male" || gender === "female")) {
           //Gender is OK: m or f) : Now invoke function to calculate values to calculate index of day.
-          console.log("Gender OK: We can calculate the value Name");
+          console.log("OK: Gendor is OK -> Calculate Akan Name");
 
       //Call the Akan Name Function to Check the Name 
-        getAkanName(gender);
+        getAkanName();
             
         } else {
           //Gender is not Ok: Throw Error
-          console.log("Gendor Error: Enter between M or F");
-          alert("Gendor Error: Gender must either be M or F");
+          console.log("Error: Enter Gender as M or F or Male or Female");
+          alert("Error: Enter Gender as M or F or Male or Female");
         }
       } else {
         //Day is not Ok: Throw Error
-        console.log("Day Error: Enter between 1 and 31");
-        alert("Day Error: Day between 1 and 31");
+        console.log("Error: Enter Birth Day between 1 and 31");
+        alert("Error: Enter Birth Day between 1 and 31");
       }
     } else {
       //Month is not Ok: Throw Error
-      console.log("Month Error: Enter between 1 and 12");
-      alert("Month Error: Enter Month between 1 and 12");
+      console.log("Error: Enter Birth Month between 1 and 12");
+      alert("Error: Enter Birth Month between 1 and 12");
     }
 
         
@@ -146,29 +148,31 @@ if(containNumbersOnly(birthYear)){
    else {
        //Throw Error: The length of the Year is Less than or More than 4 digits i.e CCYY
         console.log("Error: Fill the Year in Four Digits:" +birthYear);
+        alert("Error: Fill the Birth Year in Four Digits");
     }
 }
 else
 {
     //Throw Error: the Entry contain non-numbers i.e #^7* @ e.t.c
     console.log("Error: Fill Year Date in Numbers:" +birthYear);
+    alert("Error: Fill the Birth Year Date in Numbers");
 }
 
 
 
 /*REGEX Function to validate the year INPUT only has numbers*/
-function containNumbersOnly(str){
+function containNumbersOnly (str){
     return /^\d+$/.test(str); 
 }
 
 
 
 /*Start of getAkanName Function*/
-function getAkanName (gender) {
-    
-var gender = gender; 
-var akanName = null;
-var indexOf = null;
+function getAkanName () {
+ 
+  //declare project local variables
+let akanName = null;
+let indexOf = null;
 
 //call the indexOfDay function to calculate index to access the 2 array lists.
 indexOf = getDayOfTheWeekIndex(birthCenturyDigits, birthYearDigits, birthMonth, birthDay);
@@ -177,15 +181,17 @@ indexOf = getDayOfTheWeekIndex(birthCenturyDigits, birthYearDigits, birthMonth, 
 console.log("Test the response of the function call "+ indexOf);
 
 //Strict check of gender! NULL Index means the Name does not exist.
-    if (gender ==="f" && indexOf !== null )
+    if ((gender ==="f" || gender ==="female") && indexOf !== null )
 {
     akanName = femaleNameList[indexOf];
     console.log("Your Akan Name -> Woman :" +akanName);
+    alert("Your Akan Name is : " +akanName);
 }
-else if (gender ==="m" && indexOf !== null) {
+else if ((gender ==="m" ||gender ==="male" ) && indexOf !== null) {
     
     akanName = maleNameList[indexOf];
    console.log("Your Akan Name -> Man  : " +akanName);
+   alert("Your Akan Name is : " +akanName);
 } 
 else{
     //Throw Error: Akan Name does not exixt
@@ -237,6 +243,7 @@ d =  ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD )%7;
    else{
     //The index should always be +ve and  => Akan Name does not exist in the 2 lists.
     console.log("Your Akan Name does not Exist");
+    alert("Your Akan Name does not Exist");
      // Return NULL or Error message to HTML:
        return null;
    }
