@@ -71,7 +71,13 @@ Saturday: Ama
   console.log("Birth Day " + birthDay);
   console.log("Your Gender " + gender);
 
+  if(birthYear ==''||birthMonth ==''||birthDay ==''||gender ==''){
 
+    //alert("Error:Some entries are blank");
+    document.getElementById("error").innerHTML = "Ensure you fill all the entries";
+   }
+   
+   else{
 
 //Validate birthYear is made up of number characters only
 if(containNumbersOnly(birthYear) === true){
@@ -192,7 +198,7 @@ else
    // alert("Error: Fill the Birth Year Date in Numbers");
     document.getElementById("error").innerHTML = "Fill the Birth Year in Numbers";
 }
-
+   }
 
 /*REGEX Function to validate the year INPUT only has numbers*/
 function containNumbersOnly (str){
