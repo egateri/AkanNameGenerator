@@ -74,6 +74,15 @@ Saturday: Ama
 if(containNumbersOnly(birthYear) === true){
     console.log("OK: Year Numbers only:" +birthYear);
 
+    //Validate birthMonth is made up of number characters only
+    if(containNumbersOnly(birthMonth) === true){
+   console.log("OK: Month Numbers only:" +birthYear);
+
+        //Validate birthDay is made up of number characters only
+    if(containNumbersOnly(birthDay) === true){
+   console.log("OK: Day Numbers only:" +birthDay);
+        
+        
     //check that the year is 4 digits long => CCYY i.e 1934
     if(birthYear.length === 4){
         
@@ -121,7 +130,7 @@ if(containNumbersOnly(birthYear) === true){
         //Strict validatation of gender
         if ((gender === "m" || gender === "f") || (gender === "male" || gender === "female")) {
           //Gender is OK: m or f) : Now invoke function to calculate values to calculate index of day.
-          console.log("OK: Gendor is OK -> Calculate Akan Name");
+          console.log("OK: Gender is OK -> Calculate Akan Name");
 
       //Call the Akan Name Function to Check the Name 
         getAkanName();
@@ -150,7 +159,23 @@ if(containNumbersOnly(birthYear) === true){
         console.log("Error: Fill the Year in Four Digits:" +birthYear);
         alert("Error: Fill the Birth Year in Four Digits");
     }
+
+    }
+
+    else {
+
+        //Throw Error: the Day Entry contain non-numbers i.e #^7* @ e.t.c
+    console.log("Error: Fill Day  Date in Numbers:" +birthDay);
+    alert("Error: Fill the Birth Day Date in Numbers"); 
+    }
 }
+else {
+     //Throw Error: the Month Entry contain non-numbers i.e #^7* @ e.t.c
+    console.log("Error: Fill Month  Date in Numbers:" +birthMonth);
+    alert("Error: Fill the Birth Month Date in Numbers");
+}
+}
+    
 else
 {
     //Throw Error: the Entry contain non-numbers i.e #^7* @ e.t.c
@@ -159,12 +184,10 @@ else
 }
 
 
-
 /*REGEX Function to validate the year INPUT only has numbers*/
 function containNumbersOnly (str){
     return /^\d+$/.test(str); 
 }
-
 
 
 /*Start of getAkanName Function*/
