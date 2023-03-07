@@ -56,7 +56,10 @@ Saturday: Ama
     birthMonth = document.getElementById("form").elements[1].value;
     birthDay = document.getElementById("form").elements[2].value;
     gender = document.getElementById("form").elements[3].value;
-
+    
+    //clear previous update on response and error id on HTML, if any.
+    document.getElementById("demo").innerHTML = null;
+    document.getElementById("error").innerHTML = null;
   /*Getting the inputs via prompt*/ 
   // birthYear = prompt("Enter Birth Year:");
   // birthMonth = prompt("Enter Month Birth:");
@@ -138,17 +141,20 @@ if(containNumbersOnly(birthYear) === true){
         } else {
           //Gender is not Ok: Throw Error
           console.log("Error: Enter Gender as M or F or Male or Female");
-          alert("Error: Enter Gender as M or F or Male or Female");
+          //alert("Error: Enter Gender as M or F or Male or Female");
+          document.getElementById("error").innerHTML = "Enter Gender as M or F or Male or Female";
         }
       } else {
         //Day is not Ok: Throw Error
         console.log("Error: Enter Birth Day between 1 and 31");
-        alert("Error: Enter Birth Day between 1 and 31");
+        //alert("Error: Enter Birth Day between 1 and 31");
+        document.getElementById("error").innerHTML = "Enter Birth Day between 1 and 31";
       }
     } else {
       //Month is not Ok: Throw Error
       console.log("Error: Enter Birth Month between 1 and 12");
-      alert("Error: Enter Birth Month between 1 and 12");
+      //alert("Error: Enter Birth Month between 1 and 12");
+      document.getElementById("error").innerHTML = "Enter Birth Month between 1 and 12";
     }
 
         
@@ -157,7 +163,8 @@ if(containNumbersOnly(birthYear) === true){
    else {
        //Throw Error: The length of the Year is Less than or More than 4 digits i.e CCYY
         console.log("Error: Fill the Year in Four Digits:" +birthYear);
-        alert("Error: Fill the Birth Year in Four Digits");
+        //alert("Error: Fill the Birth Year in Four Digits");
+        document.getElementById("error").innerHTML = "Fill the Birth Year in Four Digits";
     }
 
     }
@@ -166,13 +173,15 @@ if(containNumbersOnly(birthYear) === true){
 
         //Throw Error: the Day Entry contain non-numbers i.e #^7* @ e.t.c
     console.log("Error: Fill Day  Date in Numbers:" +birthDay);
-    alert("Error: Fill the Birth Day Date in Numbers"); 
+    //alert("Error: Fill the Birth Day Date in Numbers"); 
+    document.getElementById("error").innerHTML = "Fill Birth Day in Numbers";
     }
 }
 else {
      //Throw Error: the Month Entry contain non-numbers i.e #^7* @ e.t.c
     console.log("Error: Fill Month  Date in Numbers:" +birthMonth);
-    alert("Error: Fill the Birth Month Date in Numbers");
+    //alert("Error: Fill the Birth Month Date in Numbers");
+    document.getElementById("error").innerHTML = "Fill Birth Month in Numbers";
 }
 }
     
@@ -180,7 +189,8 @@ else
 {
     //Throw Error: the Entry contain non-numbers i.e #^7* @ e.t.c
     console.log("Error: Fill Year Date in Numbers:" +birthYear);
-    alert("Error: Fill the Birth Year Date in Numbers");
+   // alert("Error: Fill the Birth Year Date in Numbers");
+    document.getElementById("error").innerHTML = "Fill the Birth Year in Numbers";
 }
 
 
@@ -208,13 +218,15 @@ console.log("Test the response of the function call "+ indexOf);
 {
     akanName = femaleNameList[indexOf];
     console.log("Your Akan Name -> Woman :" +akanName);
-    alert("Your Akan Name is : " +akanName);
+   // alert("Your Akan Name is : " +akanName);
+    document.getElementById("demo").innerHTML = "Your Akan Name is : " +akanName;
 }
 else if ((gender ==="m" ||gender ==="male" ) && indexOf !== null) {
     
     akanName = maleNameList[indexOf];
    console.log("Your Akan Name -> Man  : " +akanName);
-   alert("Your Akan Name is : " +akanName);
+   //alert("Your Akan Name is : " +akanName);
+   document.getElementById("demo").innerHTML = "Your Akan Name is : " +akanName;
 } 
 else{
     //Throw Error: Akan Name does not exixt
