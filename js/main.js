@@ -278,7 +278,8 @@ d =  ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD )%7;
    else{
     //The index should always be +ve and  => Akan Name does not exist in the 2 lists.
     console.log("Your Akan Name does not Exist");
-    alert("Your Akan Name does not Exist");
+    //alert("Your Akan Name does not Exist");
+    document.getElementById("demo").innerHTML = "Sorry,your Akan Name does not Exist";
      // Return NULL or Error message to HTML:
        return null;
    }
