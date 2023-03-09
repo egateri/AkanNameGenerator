@@ -71,10 +71,11 @@ Saturday: Ama
   console.log("Birth Day " + birthDay);
   console.log("Your Gender " + gender);
 
+  //validate all the entries in the form are filled. Non is left blank.
   if(birthYear ==''||birthMonth ==''||birthDay ==''||gender ==''){
 
     //alert("Error:Some entries are blank");
-    document.getElementById("error").innerHTML = "Ensure you fill all the entries";
+    document.getElementById("error").innerHTML = "<strong>Note:</strong> Ensure you fill all the entries";
    }
    
    else{
@@ -223,16 +224,16 @@ console.log("Test the response of the function call "+ indexOf);
     if ((gender ==="f" || gender ==="female") && indexOf !== null )
 {
     akanName = femaleNameList[indexOf];
-    console.log("Your Akan Name -> Woman :" +akanName);
+    console.log("Your Akan Name -> Woman : "+akanName);
    // alert("Your Akan Name is : " +akanName);
-    document.getElementById("demo").innerHTML = "Your Akan Name is : " +akanName;
+    document.getElementById("demo").innerHTML = "Your Akan Name is : <strong>"+akanName+"</strong>";
 }
 else if ((gender ==="m" ||gender ==="male" ) && indexOf !== null) {
     
     akanName = maleNameList[indexOf];
    console.log("Your Akan Name -> Man  : " +akanName);
    //alert("Your Akan Name is : " +akanName);
-   document.getElementById("demo").innerHTML = "Your Akan Name is : " +akanName;
+   document.getElementById("demo").innerHTML = "Your Akan Name is : <strong>"+akanName+"</strong>";
 } 
 else{
     //Throw Error: Akan Name does not exixt

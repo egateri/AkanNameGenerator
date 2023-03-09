@@ -39,3 +39,28 @@ top:0;
   #error {
     color:red;
   }
+
+  #form{
+   width:100%;
+   padding:10px;
+   border:solid;
+   border-color:purple;
+   border-radius:10px;
+   height:100%;
+
+  }
+
+  .form-text {
+    font-size:x-small;
+    color:f2f2f2;
+    text-align:left;
+  }
+
+  .form-label{
+    font-size:medium;
+  }
+
+  .mb-3{
+    margin:0;
+    padding:0;
+  }
