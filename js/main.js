@@ -60,6 +60,7 @@ Saturday: Ama
     //clear previous update on response and error id on HTML, if any.
     document.getElementById("demo").innerHTML = null;
     document.getElementById("error").innerHTML = null;
+    
   /*Getting the inputs via prompt*/ 
   // birthYear = prompt("Enter Birth Year:");
   // birthMonth = prompt("Enter Month Birth:");
@@ -86,7 +87,7 @@ if(containNumbersOnly(birthYear) === true){
 
     //Validate birthMonth is made up of number characters only
     if(containNumbersOnly(birthMonth) === true){
-   console.log("OK: Month Numbers only:" +birthYear);
+   console.log("OK: Month Numbers only:" +birthMonth);
 
         //Validate birthDay is made up of number characters only
     if(containNumbersOnly(birthDay) === true){
@@ -105,7 +106,7 @@ if(containNumbersOnly(birthYear) === true){
         console.log("OK: birthYearDigits:  " +birthYearDigits);
 
         //observe the datatye of CC and YY
-        console.log("OK birthCenturyDigits  :" +typeof(birthCenturyDigits));
+        console.log("OK: birthCenturyDigits  :" +typeof(birthCenturyDigits));
         console.log("OK: birthYearDigits:  " +typeof(birthYearDigits));
         
         //Parse from String to Numbers
