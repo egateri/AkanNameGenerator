@@ -34,7 +34,12 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#akan_name_generator">Akan Name</a>
+              <a class="nav-link" href="#akan_name">Akan Name</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#akan_name_generator"
+                >Akan Name Generator</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#culture">Culture</a>
@@ -48,35 +53,96 @@
       <br />
     </div>
     <!-- # End of navigation  -->
-    <div class="container-fluid">
-      <h3 class="bg-bg-light">What are Akan Name?</h3>
-      <p class="text-muted">
-        Akan names are derived from Ghanian culture. In Ghana, children are
-        given their first name as a <em>day name</em> which corresponds to the
-        day in the week they were born and based on their gender.
-      </p>
-      <p class="text-muted">
-        Most people know when their birthdays are, but some might not know what
-        day of the week they were born.
-      </p>
-      <h4 class="bg-bg-light">Would you like to know your Akan Name?</h4>
-      <p class="text-muted">Follow below steps to Know your Akan Name:</p>
-      <ol>
-        <li class="text-list">
-          Input your Birth Year, Birth Month and Birth Day in the Akan Name
-          Generator;
-        </li>
-        <li class="text-list">Input your Gender - Male or Female;</li>
-        <li class="text-list">Click the Submit Button;</li>
-        <li class="text-list">Your Akan Name will be displayed.</li>
-      </ol>
-    </div>
+    <!-- #start of akan name  -->
+    <section id="akan_name">
+      <div class="container-fluid">
+        <h3 class="bg-bg-light">What are Akan Name?</h3>
+        <p class="text-muted">
+          Akan names are derived from Ghanian culture. In Ghana, children are
+          given their first name as a <em>day name</em> which corresponds to the
+          day in the week they were born and based on their gender.
+        </p>
+        <div class="container">
+          <table class="table table-xm table-hover table-bordered" id="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Day</th>
+                <th scope="col">Male Name</th>
+                <th scope="col">Female Name</th>
+              </tr>
+            </thead>
+            <tbody class="">
+              <tr>
+                <th scope="row">0</th>
+                <td>Sunday</td>
+                <td>Kwasi</td>
+                <td>Akosua</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Monday</td>
+                <td>Kwadwo</td>
+                <td>Adwoa</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Tuesday</td>
+                <td>Kwabena</td>
+                <td>Abenaa</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Wednesday</td>
+                <td>Kwaku</td>
+                <td>Akua</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Thursday</td>
+                <td>Yaw</td>
+                <td>Yaa</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Friday</td>
+                <td>Kofi</td>
+                <td>Afua</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Saturday</td>
+                <td>Kwame</td>
+                <td>Ama</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-muted">
+          Most people know when their birthdays are, but some might not know
+          what day of the week they were born.
+        </p>
+        <h4 class="bg-bg-light">Would you like to know your Akan Name?</h4>
+        <p class="text-muted">Follow below steps to Know your Akan Name:</p>
+        <ol>
+          <li class="text-list">
+            Input your Birth Year, Birth Month and Birth Day in the Akan Name
+            Generator,
+          </li>
+          <li class="text-list">Input your Gender - Male or Female,</li>
+          <li class="text-list">Click the Submit Button,</li>
+          <li class="text-list">
+            Your Akan Name will be displayed above the Submit Button.
+          </li>
+        </ol>
+      </div>
+    </section>
     <!-- #start of the Akan Name generator -->
     <section id="akan_name_generator">
       <div class="container-fluid">
         <h3 class="bg-bg-light">Akan Name Generator:</h3>
         <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="col-sm-8 col-md-8 col-lg-8">
             <!-- # Form to capture inputs  -->
             <form id="form">
               <div class="mb-3">
@@ -131,16 +197,16 @@
                   Enter the Gender as F, M, Female or Male
                 </div>
               </div>
+              <p id="error"></p>
+              <p id="demo"></p>
               <button onclick="main()" type="button" class="btn btn-primary">
                 Submit
               </button>
-              <p id="error"></p>
-              <p id="demo"></p>
             </form>
             <!-- # End of form to capture inputs  -->
             <script src="js/main.js"></script>
           </div>
-          <div class="col-sm-6 col-md-6 col-lg-6">
+          <div class="col-sm-4 col-md-4 col-lg-4">
             <!-- column left blank -->
           </div>
         </div>
