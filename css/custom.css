@@ -1,3 +1,4 @@
+/* image sizing  */
 img {
   /* width: 200px;
     height: 300px;  */
@@ -21,20 +22,16 @@ img {
   margin: 10px;
 }
 
+/* size of the container  */
 .container-fluid {
   padding: 60px 50px;
 }
 
+/* background of culture container  */
 .bg-grey {
   background-color: #f6f6f6;
 }
-.logo {
-  font-size: 200px;
-}
 
-.bg-pink {
-  background-color: palevioletred;
-}
 
 /* style to display Akan Name  */
 #demo {
@@ -57,16 +54,19 @@ img {
   height: 100%;
 }
 
+/* font size of form text  */
 .form-text {
   font-size: x-small;
   color: f2f2f2;
   text-align: left;
 }
 
+/* font size of form label  */
 .form-label {
   font-size: medium;
 }
 
+/* margin of form input fields  */
 .mb-3 {
   margin: 0;
   padding: 0;
