@@ -5,30 +5,30 @@ Akan Name Generator
  - Email: egateri@gmail.com
  - Student: Moringa School
 #### About this project
-Akan Name Generator is a web application that takes a user's birthday and calculate the day of the week they were born   
-and then based on their gender outputs their Akan Name.
+Akan Name Generator is a web application that takes a user's birthday and calculate the day of the week they were born and then based on their gender outputs their Akan Name.
 
 [Akan names][1] are derived from Ghanian culture. Frequently in Ghana, children are given their first name as a 'day name' which corresponds to the day in the week they were born.
 
-To develop the web application, javascript programming language, Hyper Text Mark up Language ([HTML][2]) and Cascading Style Sheets ([CSS][3]) language have been used.
+To develop the web application, [JavaScript][4] programming language, Hyper Text Mark up Language ([HTML][2]) and Cascading Style Sheets ([CSS][3]) language have been used.
 
 [1]: <https://en.wikipedia.org/wiki/Akan_names> "Akan Names"
 [2]: <https://www.w3schools.com/html/> "Hyper Text Mark up Language"
 [3]: <https://developer.mozilla.org/en-US/docs/Web/CSS> "Cascading Style Sheets"
+[4]: <https://developer.mozilla.org/en-US/docs/Web/JavaScript> "JavaScript"
 
-#### Setup Instructions 
+#### Setup Instructions: 
 1. To use the web application:  
-   - Access the [live link] (https://egateri.github.io/AkanNameGenerator/) on your favourite browser
-   - Follow the steps by inputting your birthday and choosing your gender
-   - Click submit to get your Akan Name
+   - Access the **[Live link](https://egateri.github.io/AkanNameGenerator/)** on your favourite browser
+   - Follow the steps by inputting your birthday and choosing your gender on the web form
+   - Click _Submit_ button on the web form to get your Akan Name
      
-2. To Observe the execution of the Java script
-   - Access the [live link] (https://egateri.github.io/AkanNameGenerator/) preferably from Chrome browser
-   - Right anywhere on the browser 
-   - Choose Inspect option
-   - Navigate to the console tab
+2. To observe the execution of the Java script
+   - Access the **[Live link](https://egateri.github.io/AkanNameGenerator/)** preferably from Chrome browser
+   - Right click anywhere on the browser 
+   - Choose _Inspect_ option
+   - Navigate to the _Console_ tab
    - Follow the steps of inputting your birthday and choosing your gender
-   - As you click submit the the details you will observe the execution of javascript on the web console
+   - As you click submit the the details you should observe the execution of javascript on the web _Console_
 
 3. To develop a similar web application or make improvements 
     - Ensure you have installed [google chrome](https://www.google.com/chrome/) browser 
@@ -37,12 +37,12 @@ To develop the web application, javascript programming language, Hyper Text Mark
       `mkdir your_project_folder`
     - Navigate to your project folder  
        `cd your_project_folder`  
-    - Clone the akan name source code into your project folder    
+    - Clone the Akan Name Generator source code into your project folder    
        `git clone https://github.com/egateri/AkanNameGenerator.git`
-    - Use the Visual studio to open ,review, update and locally test the web application   
+    - Use the Visual Studio code editor to open, review, update and locally test the web application   
        `code .`
     - Use the Chrome to test new javascript functions.
-    - Use [Bootstrap](https://getbootstrap.com/) tool to help improve the look and feel of the web application
+    - Use [Bootstrap](https://getbootstrap.com/) tool to help improve on the look and feel of the web application
     - Request to merge new improvements into the master branch
     - Push update to the main branch using git once the merge requests are approved. 
  
@@ -51,7 +51,7 @@ To develop the web application, javascript programming language, Hyper Text Mark
 
  #### BDD
   As a user, I would like to;  
-  1. See a  small description of what the application does on the landing page.
+  1. See a small description of what the application does on the landing page.
   2. Enter my birthday through a form 
   1. Choose what gender I am.
   1. Click the submit button to see what my Akan name would be
