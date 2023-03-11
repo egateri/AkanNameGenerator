@@ -60,7 +60,7 @@ Saturday: Ama
     //clear previous update on response and error id on HTML, if any.
     document.getElementById("demo").innerHTML = null;
     document.getElementById("error").innerHTML = null;
-    
+
   /*Getting the inputs via prompt*/ 
   // birthYear = prompt("Enter Birth Year:");
   // birthMonth = prompt("Enter Month Birth:");
@@ -75,7 +75,7 @@ Saturday: Ama
   //validate all the entries in the form are filled. Non is left blank.
   if(birthYear ==''||birthMonth ==''||birthDay ==''||gender ==''){
 
-    //alert("Error:Some entries are blank");
+    alert("Error:Some entries are blank");
     document.getElementById("error").innerHTML = "<strong>Note:</strong> Ensure you fill all the entries";
    }
    
