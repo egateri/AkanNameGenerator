@@ -15,14 +15,17 @@
   </head>
   <body>
     <!-- #Start of header   -->
+    <!-- Header disabled to improve display  -->
     <!-- <div class="jumbotron">
       <h1>Akan Name Generator</h1>
       <p>A JavaScript Program to Generate the Akan Name of a User.</p>
     </div> -->
     <!-- #Start of Navigation   -->
     <div class="navigation">
-      <nav class="navbar navbar-expand-md bg-secondary fixed-top navbar-dark text-left">
-        <a class="navbar-brand" href="#">Home</a>
+      <nav
+        class="navbar navbar-expand-md bg-secondary fixed-top navbar-dark text-left"
+      >
+        <a class="navbar-brand" href="index.html">Home</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -48,22 +51,27 @@
       <br />
     </div>
     <!-- # End of navigation  -->
-    <!-- #start of akan name  -->
+    <br />
+    <!-- #start brief description of Akan Name Generator on landing page  -->
     <section id="akan_name">
-      <div class="container-fluid">   
+      <div class="container-fluid">
         <p class="text-muted">
-          This Program, Akan Name Generator, is designed to help users to know the day of the week
-          they were born and hence identify their Akan Names.</p>
+          This Program, Akan Name Generator, is designed to help users to know
+          the day of the week they were born and hence identify their Akan
+          Names.
+        </p>
         <p class="text-muted">Follow below steps to Know your Akan Name:</p>
         <ol>
           <li class="text-list">
             Input your Birth Year, Birth Month and Birth Day,
           </li>
           <li class="text-list">Choose your Gender - Male or Female,</li>
-          <li class="text-list">Click the Submit Button to display your Akan Name.</li>
+          <li class="text-list">
+            Click the Submit Button to display your Akan Name.
+          </li>
         </ol>
-      
-    <!-- #start of the Akan Name generator -->
+
+        <!-- #start of the Akan Name generator -->
         <h6 class="bg-bg-light h6">Akan Name Generator:</h6>
         <div class="row">
           <div class="col-sm-8 col-md-8 col-lg-8">
@@ -112,15 +120,26 @@
                 </div>
               </div>
               <div class="mb-0">
-                   <label for="Gender" class="form-label">Please select your:</label><br>
-                   <input type="radio" id="radio-text" name="gender" value="male">
-                   <label for="male">Male</label><br>
-                   <input type="radio" id="gender" name="gender" value="female">
-                    <label for="female">Female</label><br>
+                <!-- Radio button to choose gender  -->
+                <label for="Gender" class="form-label"
+                  >Please select your:</label
+                ><br />
+                 
+                <input
+                  type="radio"
+                  id="radio-text"
+                  name="gender"
+                  value="male"
+                />
+                  <label for="male">Male</label><br />
+                 
+                <input type="radio" id="gender" name="gender" value="female" />
+                  <label for="female">Female</label><br />
                 <div id="" class="form-text">
                   Choose your Gender as either Male or Female
                 </div>
               </div>
+              <!-- ElementIds to display Akan Name and Input errors  -->
               <p id="error"></p>
               <p id="demo"></p>
               <button onclick="main()" type="button" class="btn btn-primary h6">
@@ -131,16 +150,13 @@
             <script src="js/main.js"></script>
           </div>
           <div class="col-sm-4 col-md-4 col-lg-4">
-            <!-- column left blank -->
+            <!-- 2nd column of the row left blank to improve display-->
           </div>
         </div>
       </div>
     </section>
     <!-- # End of akan Name generator  -->
     <br />
-    <!-- # start of akan culture content  -->
-
-    <!-- # Start of present day ghana content  -->
 
     <!-- # Start of the footer -->
     <div class="container-fluid bg-grey" id="footer">
