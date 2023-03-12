@@ -55,9 +55,11 @@ Saturday: Ama
     birthYear = document.getElementById("form").elements[0].value;
     birthMonth = document.getElementById("form").elements[1].value;
     birthDay = document.getElementById("form").elements[2].value;
-    gender = document.getElementById("form").elements[3].value;
-    
-    //clear previous update on response and error id on HTML, if any.
+
+  /*Getting inputs Radio Button*/
+    gender = checkGenderChoice();
+
+    /*clear previous update on response and error id on HTML, if any.*/
     document.getElementById("demo").innerHTML = null;
     document.getElementById("error").innerHTML = null;
 
@@ -71,6 +73,22 @@ Saturday: Ama
   console.log("Birth Month " + birthMonth);
   console.log("Birth Day " + birthDay);
   console.log("Your Gender " + gender);
+
+  // Function to check the Radio Option picked 
+  function checkGenderChoice(){
+    let genderChoice = null;
+    if(document.getElementById("male").checked ===true){
+      genderChoice = "male";
+      return genderChoice;
+    }
+    else if (document.getElementById("female").checked ===true){
+      genderChoice = "female";
+      return genderChoice;
+    }
+    else{
+      return null;
+    }
+  }
 
   //validate all the entries in the form are filled. Non is left blank.
   if(birthYear ==''||birthMonth ==''||birthDay ==''||gender ==''){
@@ -125,7 +143,7 @@ if(containNumbersOnly(birthYear) === true){
        console.log("Parsed Birth Month " + birthMonth);
        birthDay = parseInt(birthDay);
        console.log("Parsed Birth Day " + birthDay);
-       gender = gender.toLowerCase();
+       //gender = gender.toLowerCase();
        console.log("Your Gender " + gender);
        
 
