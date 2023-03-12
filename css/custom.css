@@ -53,15 +53,13 @@ img {
 
 /* style for the form  */
 #form {
-  width: 400px;
-  /* width: 100%; */
+  width: 100%;
   padding: 5px;
   border: solid;
   border-color: darkolivegreen;
   border-radius: 10px;
   border-width: 1pt;
   height: 100%;
-  /* height: 300px; */
 }
 
 /* font size of form text  */
@@ -97,18 +95,21 @@ img {
   text-align: left;
 }
 
+/* style for landing page instructions */
 .text-list {
   font-style: italic;
   color: darkgreen;
   font-size: small;
 }
+/* style for input fields */
 .text-muted {
   font-size: small;
 }
 
+/* style for Akan Names Table */
 #table {
   font-size: x-small;
-  height: 43px;
-  width: 433px;
+  /* height: 43px;
+  width: 433px; */
 }
 
