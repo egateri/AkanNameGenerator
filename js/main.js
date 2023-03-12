@@ -91,7 +91,7 @@ Saturday: Ama
   }
 
   //validate all the entries in the form are filled. Non is left blank.
-  if(birthYear ==''||birthMonth ==''||birthDay ==''||gender ==''){
+  if(birthYear ==''||birthMonth ==''||birthDay ==''||gender === null){
 
     alert("Error:Some entries are blank");
     document.getElementById("error").innerHTML = "<strong>Note:</strong> Ensure you fill all the entries";
@@ -138,12 +138,11 @@ if(containNumbersOnly(birthYear) === true){
         console.log("OK: birthYearDigits:  " +typeof(birthYearDigits));
 
 
-      /*parsing the inputs to help in validation - for Day DD, Month, MM, and Gender*/
+      /*parsing the inputs to help in validation - for Day DD, Month, MM*/
        birthMonth = parseInt(birthMonth);
        console.log("Parsed Birth Month " + birthMonth);
        birthDay = parseInt(birthDay);
        console.log("Parsed Birth Day " + birthDay);
-       //gender = gender.toLowerCase();
        console.log("Your Gender " + gender);
        
 
@@ -157,7 +156,7 @@ if(containNumbersOnly(birthYear) === true){
         console.log("OK: Day is OK -> validate the Gender");
 
         //Strict validatation of gender
-        if ((gender === "m" || gender === "f") || (gender === "male" || gender === "female")) {
+        if (gender === "male" || gender === "female") {
           //Gender is OK: m or f) : Now invoke function to calculate values to calculate index of day.
           console.log("OK: Gender is OK -> Calculate Akan Name");
 
@@ -166,9 +165,9 @@ if(containNumbersOnly(birthYear) === true){
             
         } else {
           //Gender is not Ok: Throw Error
-          console.log("Error: Enter Gender as M or F or Male or Female");
+          console.log("Error: Choose Gender as Either Male or Female");
           //alert("Error: Enter Gender as M or F or Male or Female");
-          document.getElementById("error").innerHTML = "Enter Gender as M or F or Male or Female";
+          document.getElementById("error").innerHTML = "Choose Gender as either Male or Female";
         }
       } else {
         //Day is not Ok: Throw Error
