@@ -203,7 +203,7 @@ const main = () => {
              //Throw Error: the Month Entry contain non-numbers i.e #^7* @ e.t.c
              console.log("Error: Fill Month  Date in Numbers:" + birthMonth);
              //Alert message
-             alert("Error: Fill the Birth Month in Numbers");
+             alert("Fill the Birth Month in Numbers");
              //display on the webpage
              //document.getElementById("error").innerHTML = "Fill Birth Month in Numbers";
              //Refresh the form
@@ -234,12 +234,7 @@ const main = () => {
     let indexOf = null;
 
     //call the indexOfDay function to calculate index to access the 2 array lists.
-    indexOf = getDayOfTheWeekIndex(
-      birthCenturyDigits,
-      birthYearDigits,
-      birthMonth,
-      birthDay
-    );
+    indexOf = getDayOfTheWeekIndex(birthCenturyDigits, birthYearDigits, birthMonth,birthDay);
 
     //Observe the response from the Function
     console.log("Test the response of the function call " + indexOf);
@@ -317,10 +312,13 @@ const main = () => {
        dayOfTheWeekIndex = Math.floor(d);
        // Return Index to getAkanName function
        return dayOfTheWeekIndex;
-     } else {
+     } 
+     
+       else {
        //The index should always be +ve, Akan Name does not exist in the 2 lists, wher index is -ve.
        // Return NULL to getAkanName function
        return null;
+       
      }
   }
 };
