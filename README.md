@@ -20,15 +20,18 @@ To develop the web application, [JavaScript][4] programming language, Hyper Text
 1. To use the web application:  
    - Access the **[Live link](https://egateri.github.io/AkanNameGenerator/)** on your favourite browser
    - Follow the steps by inputting your birthday and choosing your gender on the web form
-   - Click _Submit_ button on the web form to get your Akan Name
+   - Click _Submit_ button on the web form to get your Akan Name  
+   - Repeat steps with wrong data types and data out of range for negative test cases
+   - Test with Mobile and desktop (smallest to the largest) to observe the web media effects
      
 2. To observe the execution of the Java script
    - Access the **[Live link](https://egateri.github.io/AkanNameGenerator/)** preferably from Chrome browser
-   - Right click anywhere on the browser 
+   - Right click anywhere on the browser while on the Home page (Landing page)
    - Choose _Inspect_ option
    - Navigate to the _Console_ tab
-   - Follow the steps of inputting your birthday and choosing your gender
-   - As you click submit the the details you should observe the execution of javascript on the web _Console_
+   - Follow the steps by inputting your birthday and choosing your gender
+   - As you click the _submit_ button you should observe the execution of javascript on the web _Console_  
+   - Repeat steps with wrong data types, missing entries and data out range for negative test cases
 
 3. To develop a similar web application or make improvements 
     - Ensure you have installed [google chrome](https://www.google.com/chrome/) browser 
@@ -39,12 +42,13 @@ To develop the web application, [JavaScript][4] programming language, Hyper Text
        `cd your_project_folder`  
     - Clone the Akan Name Generator source code into your project folder    
        `git clone https://github.com/egateri/AkanNameGenerator.git`
-    - Use the Visual Studio code editor to open, review, update and locally test the web application   
+    - Use the Visual Studio code editor to open, review, update and locally test the web application using the Live Server    
        `code .`
     - Use the Chrome to test new javascript functions.
-    - Use [Bootstrap](https://getbootstrap.com/) tool to help improve on the look and feel of the web application
-    - Request to merge new improvements into the master branch
-    - Push update to the main branch using git once the merge requests are approved. 
+    - Use [Bootstrap](https://getbootstrap.com/) tool to help improve on the look and feel of the web application  
+    - Request to merge new improvements into the master branch  
+    - Push update to the main branch using git once the merge requests are approved.    
+    - You may also identify and suggest bugs that require fixing.
  
 #### Live Link
  https://egateri.github.io/AkanNameGenerator/
@@ -61,7 +65,7 @@ To develop the web application, [JavaScript][4] programming language, Hyper Text
  1. HTML and CSS 
  1. Bootstrap
  1. Google Chrome
- 1. Visual Studio
+ 1. Visual Studio & Live Server
 
 
 #### Contact Information
