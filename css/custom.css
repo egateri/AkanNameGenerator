@@ -30,7 +30,6 @@ img {
 
 /* size of the container  */
 .container-fluid {
-  /* padding: 60px 50px; */
   padding: 10px 10px;
   margin-top: 10px;
 }
@@ -88,10 +87,8 @@ img {
 #footer {
   background-color: black;
   color: #ffffff;
-  /* padding: 50px 25px; */
-  padding: 70px 50px;
+  padding: 70px 20px;
   margin-top: 5px;
-  /* text-align: center; */
   text-align: left;
 }
 

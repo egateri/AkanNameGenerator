@@ -91,7 +91,7 @@ Saturday: Ama
   }
 
   //validate all the entries in the form are filled. Non is left blank.
-  if(birthYear ==''||birthMonth ==''||birthDay ==''||gender === null){
+  if(birthYear ==''||birthMonth ==''||birthDay ==''){
 
     alert("Error:Some entries are blank");
     document.getElementById("error").innerHTML = "<strong>Note:</strong> Ensure you fill all the entries";
