@@ -77,7 +77,7 @@ const main = () => {
     //Alert error message on console
     alert("Ensure you fill all the entries");
     //Update on web page
-    document.getElementById("error").innerHTML = "<strong>Note:</strong> Ensure you fill all the entries";
+    document.getElementById("error").innerHTML = "Ensure you fill all the entries";
     //Refresh the form
     form.reset();
    } else {
